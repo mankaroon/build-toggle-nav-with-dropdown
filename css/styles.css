@@ -50,7 +50,23 @@ h1 a {
 
 }
 nav{
-    flex: 1 0 100%;
+    position: absolute;
+    background-color: #f8fafc;
+    width: 98vw;
+    top: 3.75rem;
+    /* Once this changes to position absolute, it is no longer in the html layout, theefore it is no longer a flex itme */
+    /* flex: 1 0 100%; */
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+    
+}
+/* special-class that will show the nav when the button is clicked(do not add html) */
+
+.show-nav{
+    visibility: visible;
+    opacity: 1;
+    overflow: visible;
 }
 .menu li{
     line-height: 3.125rem;
@@ -72,6 +88,9 @@ nav{
     overflow:hidden;
     max-height: 0;
 }
+.submenu li{
+    border-bottom: 1px solid #cbd5e1;
+}
 /* what do you hover over--> first selector*hover
 what do you want to change?--->second selector */
 .menu li:hover> .submenu{
@@ -88,4 +107,64 @@ what do you want to change?--->second selector */
         width: 1000px;
         margin: 0 auto;
     }
+    .btn{
+        display: none;
+    }
+    nav{
+        position: static;
+        visibility: visible;
+        opacity: 1;
+        overflow: visible;
+        width: unset;
+    }
+    .inner-container >a{
+        order: 1;
+    }
+    ul.menu{
+        display: flex;
+        gap:1rem;
+
+    }
+    
+    .submenu{
+        text-decoration: none;
+        text-align: center;
+    }
+    .submenu li {
+        
+        /* Once this changes to position absolute, it is no longer in the html layout, theefore it is no longer a flex item
+        /* flex: 1 0 100%; */
+        position: absolute;
+        background-color: #f8fafc;
+        width: 98vw;
+        top: 3.75rem;
+        visibility: hidden;
+        opacity: 0;
+        overflow: hidden;
+        width: 0;
+        
+    }
+    .show-submenu{
+        visibility: visible;
+        opacity: 1;
+        overflow: visible;
+
+    } 
+
+    
+    .submenu li{
+        line-height: 3.125rem;
+    }
+    
+    .menu a:hover{
+        background-color: #e2e8f0;;
+    }
+    /* special-class that will show the nav when the button is clicked(do not add html) */
+    
+    
+    /* S */
+    /* to do
+    1: layout thr 3 top level links horizontally, side by side 
+    2:layout the submenu links (drop down for wider screen)
+    #:add focus or keyboarf focus to the drop down links*/
 }
